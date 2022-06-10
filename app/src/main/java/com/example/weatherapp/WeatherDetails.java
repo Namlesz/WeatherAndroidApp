@@ -20,7 +20,7 @@ public class WeatherDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_details);
 
-        TextView info = findViewById(R.id.info);
+        TextView info = findViewById(R.id.temperature);
 
         Intent intent = getIntent();
         String response = intent.getStringExtra("Weather");
@@ -55,5 +55,6 @@ public class WeatherDetails extends AppCompatActivity {
                 JSONException e) {
             e.printStackTrace();
         }
+
     }
 }
