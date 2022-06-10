@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if town is not empty
         if (city.equals("")) {
-            // TO DO: Print error
+            Toast.makeText(MainActivity.this, "This is my Toast message!",
+                    Toast.LENGTH_LONG).show();
         } else {
 
             // Check if zip code is empty
