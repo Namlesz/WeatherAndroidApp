@@ -1,96 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--androidx.constraintlayout.widget.ConstraintLayout-->
+<?xml version="1.0" encoding="utf-8"?><!--androidx.constraintlayout.widget.ConstraintLayout-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/background"
-    >
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <View
+        android:id="@+id/view2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:layout_height="73dp"
+        android:layout_weight="1" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="73dp"
-            android:layout_weight="1"></View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="casual"
+        android:text="Pogoda"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="casual"
-            android:text="Pogoda"
-            android:textColor="#000000"
-            android:textSize="50sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.579"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="119dp"
+        android:layout_weight="1" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="119dp"
-            android:layout_weight="1"></View>
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="Miasto"
+        android:includeFontPadding="false"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#474343" />
 
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:hint="Miasto"
-            android:includeFontPadding="false"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColor="#000000"
-            android:textColorHint="#474343" />
+    <EditText
+        android:id="@+id/etCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="Kod pocztowy (opcjonalne)"
+        android:includeFontPadding="false"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#474343" />
 
-        <EditText
-            android:id="@+id/etCountry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:hint="Kod pocztowy (opcjonalne)"
-            android:includeFontPadding="false"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColorHint="#474343" />
+    <Button
+        android:id="@+id/btnGet"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#244865"
+        android:fontFamily="monospace"
+        android:includeFontPadding="false"
+        android:onClick="getWeatherDetails"
+        android:text="Szukaj"
+        android:textColor="@android:color/white"
+        android:textFontWeight="2"
+        android:textSize="16sp"
+        app:backgroundTint="@null" />
 
-        <Button
-            android:id="@+id/btnGet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="#244865"
-            android:fontFamily="monospace"
-            android:includeFontPadding="false"
-            android:onClick="getWeatherDetails"
-            android:text="Szukaj"
-            android:textColor="@android:color/white"
-            android:textFontWeight="2"
-            android:textSize="16sp"
-            app:backgroundTint="@null" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="183dp"
-            android:layout_weight="1"></View>
-    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:layout_weight="1" />
 </LinearLayout>

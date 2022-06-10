@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     EditText etCity, etCountry;
@@ -35,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if town is not empty
         if (city.equals("")) {
-            Toast.makeText(MainActivity.this, "This is my Toast message!",
-                    Toast.LENGTH_LONG).show();
+            Snackbar.make(MainActivity.this,view ,"Nazwa miasta nie może być pusta!", Snackbar.LENGTH_SHORT)
+                    .setBackgroundTint(Color.rgb(240,10,10))
+                    .show();
         } else {
 
             // Check if zip code is empty
@@ -52,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent2 = new Intent(MainActivity.this, WeatherDetails.class);
                 intent2.putExtra("Weather", response);
                 startActivity(intent2);
-            }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show());
+            }, error -> Snackbar.make(MainActivity.this,view ,"Nie znaleziono miasta", Snackbar.LENGTH_SHORT)
+                    .setBackgroundTint(Color.rgb(240,10,10))
+                    .show());
 
             // Run request
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
