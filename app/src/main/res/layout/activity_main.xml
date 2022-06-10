@@ -19,10 +19,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-thin"
         android:text="Pogoda"
         android:textColor="#000000"
-        android:textSize="50sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.579"
@@ -35,8 +35,9 @@
         android:layout_height="119dp"
         android:layout_weight="1" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etCity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -44,13 +45,23 @@
         android:fontFamily="monospace"
         android:hint="Miasto"
         android:includeFontPadding="false"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColor="#000000"
-        android:textColorHint="#474343" />
+        android:textColor="#1b1b1b"
+        android:textColorHint="#424242"
+        app:boxStrokeColor="#1b1b1b"
+        app:hintTextColor="@color/black"
+        >
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etCountry"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -60,20 +71,31 @@
         android:includeFontPadding="false"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#474343" />
+        android:textColor="#1b1b1b"
+        android:textColorHint="#424242"
+        app:boxStrokeColor="#1b1b1b"
+        app:hintTextColor="@color/black"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnGet"
-        style="@style/Widget.Material3.Button.ElevatedButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:background="#244865"
+        android:background="#424242"
         android:fontFamily="monospace"
         android:includeFontPadding="false"
         android:onClick="getWeatherDetails"
         android:text="Szukaj"
-        android:textColor="@android:color/white"
+        android:textColor="#ffffff"
         android:textFontWeight="2"
         android:textSize="16sp"
         app:backgroundTint="@null" />

@@ -14,9 +14,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
-    EditText etCity, etCountry;
+    TextInputLayout etCity,etCountry;
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
     private final String appid = "3fb82e9338fc70859a8ad3958c5c77de";
 
@@ -32,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void getWeatherDetails(View view) {
         String tempUrl = "";
-        String city = etCity.getText().toString().trim();
-        String country = etCountry.getText().toString().trim();
+        String city = etCity.getEditText().getText().toString();
+        String country = etCountry.getEditText().getText().toString();
 
         // Check if town is not empty
         if (city.equals("")) {
